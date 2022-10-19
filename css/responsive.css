@@ -18,6 +18,11 @@
     gap: initial;
   }
 
+  .card-prices {
+    padding-block-start: 1rem;
+    font-size: 3.7em;
+  }
+
   .card {
     padding-block: 2.66em;
     max-width: 22em;
