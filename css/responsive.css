@@ -1,0 +1,37 @@
+@media (min-width: 900px) {
+  body {
+    display: flex;
+    background: url(../images/bg-top.svg), url(../images/bg-bottom.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: right top, left bottom;
+    background-color: var(--VeryLightGrayishBlue);
+    min-height: 100vh;
+  }
+
+  .plan {
+    padding-top: 2em;
+  }
+
+  .cards-container {
+    justify-content: center;
+    flex-direction: row;
+    gap: initial;
+  }
+
+  .card {
+    padding-block: 2.66em;
+    max-width: 22em;
+    margin-inline: initial;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-details {
+    padding-block-end: 1.66em;
+  }
+
+  .card.midd {
+    padding-block: 4em;
+  }
+}

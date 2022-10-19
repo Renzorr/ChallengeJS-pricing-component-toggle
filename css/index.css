@@ -3,7 +3,9 @@
   --LightGrayishBlue: hsl(234, 14%, 74%);
   --GrayishBlue: hsl(233, 13%, 49%);
   --DarkGrayishBlue: hsl(232, 13%, 33%);
-  --White: #fff;
+  --LightViolet: hsl(236, 72%, 79%);
+  --DarkViolet: hsl(237, 63%, 64%);
+  --White: hsl(0, 0%, 100%);
 }
 
 * {
@@ -11,7 +13,7 @@
 }
 
 html {
-  font-size: 15px;
+  font-size: 1em;
 }
 
 body {
@@ -30,31 +32,36 @@ main {
   width: 100%;
 }
 
+.top {
+  transform: translateY(-200%);
+  opacity: 0;
+}
+
 .title {
-  font-size: 35px;
+  font-size: 2.33em;
   color: var(--GrayishBlue);
 }
 
 .plan {
-  padding-top: 10px;
+  padding-top: 0.66em;
   display: flex;
-  align-items: flex-end;
-  gap: 15px;
-  font-size: 15px;
+  align-items: center;
+  gap: 1em;
+  font-size: 1em;
   color: var(--LightGrayishBlue);
 }
 
 .plan-format {
-  font-size: 13px;
+  font-size: 0.86em;
 }
 
 #toggle {
   position: relative;
-  width: 50px;
-  height: 25px;
+  width: 3.33em;
+  height: 1.66em;
   appearance: none;
-  border-radius: 15px;
-  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  border-radius: 1em;
+  background: linear-gradient(to right, var(--LightViolet), var(--DarkViolet));
   outline: none;
   cursor: pointer;
 }
@@ -63,46 +70,48 @@ main {
   content: "";
   position: absolute;
   top: 0;
-  left: 0px;
+  left: 0;
   height: 100%;
-  width: 25px;
+  width: 1.66em;
   background: var(--White);
   border-radius: 50%;
   transform: scale(1.1);
 }
 
 #toggle:checked:before {
-  left: 25px;
+  left: 1.66em;
 }
 
 .cards-container {
-  padding-block: 50px;
+  padding-block: 3.33em;
   width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 30px;
+  gap: 2em;
+  opacity: 0;
+  transform: translateY(20%);
 }
 
 .card {
   text-align: center;
   background-color: var(--White);
-  box-shadow: 3px 5px 10px gainsboro;
+  box-shadow: 0px 5px 0.66em gainsboro;
   width: 100%;
   max-width: 280px;
-  padding-inline: 15px;
-  padding-block: 20px;
-  border-radius: 10px;
+  padding-inline: 1em;
+  padding-block: 1.33em;
+  border-radius: 0.66em;
   color: var(--DarkGrayishBlue);
-  margin-inline: 20px;
+  margin-inline: 1.33em;
 }
 
 .card-plan {
-  font-size: 20px;
+  font-size: 1.33em;
 }
 
 .card-prices {
-  font-size: 50px;
+  font-size: 3.33em;
   font-weight: bold;
 }
 
@@ -111,15 +120,15 @@ main {
 }
 
 .card-details {
-  padding-block: 15px;
+  padding-block: 1em;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
 .detail {
-  padding-block: 15px;
-  font-size: 13px;
+  padding-block: 1em;
+  font-size: 0.86em;
   font-weight: bold;
   border-top: 1px solid gainsboro;
 }
@@ -129,84 +138,57 @@ main {
 }
 
 .btn-more {
-  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  background: linear-gradient(to right, var(--LightViolet), var(--DarkViolet));
   border: 1px solid var(--White);
   color: var(--White);
   width: 100%;
-  padding: 12px;
+  padding: 1em;
   display: inline-block;
-  border-radius: 5px;
+  border-radius: 0.33em;
   text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 2px;
+  font-size: 0.73em;
+  letter-spacing: 0.13em;
 }
+
+/* Appearance  of items */
+
+.top.appear {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.cards-container.appear {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+/* Middle card */
+.midd {
+  background: linear-gradient(to right, var(--LightViolet), var(--DarkViolet));
+  color: var(--White);
+}
+
+.btn-more.midd {
+  background: var(--White);
+  color: var(--DarkViolet);
+}
+
 /* Hover effects */
 
 @media (hover: hover) {
   .btn-more:hover {
     color: var(--DarkGrayishBlue);
     background: var(--White);
-    border: 1px solid hsl(237, 63%, 64%);
+    border: 1px solid var(--DarkViolet);
   }
 
   .btn-more.midd:hover {
     background: linear-gradient(
       to right,
-      hsl(236, 72%, 79%),
-      hsl(237, 63%, 64%)
+      var(--LightViolet),
+      var(--DarkViolet)
     );
     color: var(--White);
     border: 1px solid var(--White);
-  }
-}
-
-/* Middle card */
-.midd {
-  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
-  color: var(--White);
-}
-
-.btn-more.midd {
-  background: var(--White);
-  color: hsl(237, 63%, 64%);
-}
-
-/* Media Queries */
-
-@media (min-width: 900px) {
-  body {
-    display: flex;
-    background: url(../images/bg-top.svg), url(../images/bg-bottom.svg);
-    background-repeat: no-repeat, no-repeat;
-    background-position: right top, left bottom;
-    background-color: var(--VeryLightGrayishBlue);
-    min-height: 100vh;
-  }
-
-  .plan {
-    padding-top: 30px;
-  }
-
-  .cards-container {
-    justify-content: center;
-    flex-direction: row;
-    gap: initial;
-  }
-
-  .card {
-    padding-block: 40px;
-    max-width: 330px;
-    margin-inline: initial;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .card-details {
-    padding-block-end: 25px;
-  }
-
-  .card.midd {
-    padding-block: 60px;
   }
 }

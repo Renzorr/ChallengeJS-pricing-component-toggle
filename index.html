@@ -20,19 +20,21 @@
     <!-- Styles -->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
 
     <title>Frontend Mentor | [Challenge Name Here]</title>
   </head>
   <body>
     <main>
-      <!-- Title -->
-      <h1 class="title">Our Pricing</h1>
-
-      <!-- Plan -->
-      <div class="plan">
-        <p class="plan-format">Annually</p>
-        <input type="checkbox" id="toggle" />
-        <p class="plan-format">Monthly</p>
+      <div class="top">
+        <!-- Title -->
+        <h1 class="title">Our Pricing</h1>
+        <!-- Plan -->
+        <div class="plan">
+          <p class="plan-format">Annually</p>
+          <input type="checkbox" id="toggle" aria-label="toggle button" />
+          <p class="plan-format">Monthly</p>
+        </div>
       </div>
 
       <!-- Cards plan -->
@@ -51,7 +53,7 @@
             <li class="detail bottom">Send up to 3 GB</li>
           </ul>
 
-          <a href="#" class="btn-more" aria-label="Learn More Button"
+          <a href="#" class="btn-more" aria-label="learn more button"
             >Learn More</a
           >
         </div>
@@ -96,20 +98,5 @@
       </section>
     </main>
   </body>
-  <script>
-    const toggle = document.querySelector("#toggle");
-    const annual = document.querySelectorAll(".ann");
-    const month = document.querySelectorAll(".mon");
-
-    toggle.addEventListener("change", () => {
-
-      month.forEach((element) => {
-        element.classList.toggle("hide");
-      });
-      annual.forEach((element) => {
-        element.classList.toggle("hide");
-      });
-    });
-    
-  </script>
+  <script src="index.js"></script>
 </html>
