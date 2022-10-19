@@ -1,0 +1,212 @@
+:root {
+  --VeryLightGrayishBlue: hsl(240, 78%, 98%);
+  --LightGrayishBlue: hsl(234, 14%, 74%);
+  --GrayishBlue: hsl(233, 13%, 49%);
+  --DarkGrayishBlue: hsl(232, 13%, 33%);
+  --White: #fff;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  background: url(../images/bg-top.svg);
+  background-repeat: no-repeat;
+  background-position: right -35vw top;
+  background-color: var(--VeryLightGrayishBlue);
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.title {
+  font-size: 35px;
+  color: var(--GrayishBlue);
+}
+
+.plan {
+  padding-top: 10px;
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  font-size: 15px;
+  color: var(--LightGrayishBlue);
+}
+
+.plan-format {
+  font-size: 13px;
+}
+
+#toggle {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  appearance: none;
+  border-radius: 15px;
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  outline: none;
+  cursor: pointer;
+}
+
+#toggle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 100%;
+  width: 25px;
+  background: var(--White);
+  border-radius: 50%;
+  transform: scale(1.1);
+}
+
+#toggle:checked:before {
+  left: 25px;
+}
+
+.cards-container {
+  padding-block: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card {
+  text-align: center;
+  background-color: var(--White);
+  box-shadow: 3px 5px 10px gainsboro;
+  width: 100%;
+  max-width: 280px;
+  padding-inline: 15px;
+  padding-block: 20px;
+  border-radius: 10px;
+  color: var(--DarkGrayishBlue);
+  margin-inline: 20px;
+}
+
+.card-plan {
+  font-size: 20px;
+}
+
+.card-prices {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.hide {
+  display: none;
+}
+
+.card-details {
+  padding-block: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.detail {
+  padding-block: 15px;
+  font-size: 13px;
+  font-weight: bold;
+  border-top: 1px solid gainsboro;
+}
+
+.detail.bottom {
+  border-bottom: 1px solid gainsboro;
+}
+
+.btn-more {
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  border: 1px solid var(--White);
+  color: var(--White);
+  width: 100%;
+  padding: 12px;
+  display: inline-block;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+/* Hover effects */
+
+@media (hover: hover) {
+  .btn-more:hover {
+    color: var(--DarkGrayishBlue);
+    background: var(--White);
+    border: 1px solid hsl(237, 63%, 64%);
+  }
+
+  .btn-more.midd:hover {
+    background: linear-gradient(
+      to right,
+      hsl(236, 72%, 79%),
+      hsl(237, 63%, 64%)
+    );
+    color: var(--White);
+    border: 1px solid var(--White);
+  }
+}
+
+/* Middle card */
+.midd {
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: var(--White);
+}
+
+.btn-more.midd {
+  background: var(--White);
+  color: hsl(237, 63%, 64%);
+}
+
+/* Media Queries */
+
+@media (min-width: 900px) {
+  body {
+    display: flex;
+    background: url(../images/bg-top.svg), url(../images/bg-bottom.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: right top, left bottom;
+    background-color: var(--VeryLightGrayishBlue);
+    min-height: 100vh;
+  }
+
+  .plan {
+    padding-top: 30px;
+  }
+
+  .cards-container {
+    justify-content: center;
+    flex-direction: row;
+    gap: initial;
+  }
+
+  .card {
+    padding-block: 40px;
+    max-width: 330px;
+    margin-inline: initial;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-details {
+    padding-block-end: 25px;
+  }
+
+  .card.midd {
+    padding-block: 60px;
+  }
+}
